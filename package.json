@@ -1,0 +1,17 @@
+{
+  "name": "vyuastra",
+  "private": true,
+  "workspaces": [
+    "database",
+    "backend",
+    "frontend",
+    "adminpanel"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,site,admin -c blue,cyan,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\" \"npm run dev -w adminpanel\"",
+    "seed": "npm run seed -w database"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

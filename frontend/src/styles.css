@@ -1,0 +1,100 @@
+:root{--bg:#060d1f;--panel:#0d1b3a;--line:#1c3366;--blue:#1e7be0;--sky:#5db4ff;--steel:#d9dee6;--mute:#8a98b8;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--steel);font:16px/1.6 'IBM Plex Sans',sans-serif}
+h1,h2,h3,.brand,.btn{font-family:'Chakra Petch',sans-serif}a{color:var(--sky)}
+:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:#060d1fe8;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.nav nav a{margin-left:22px;text-decoration:none;color:var(--steel);padding:4px 0;border-bottom:2px solid transparent}.nav nav a:hover,.nav nav a.active{color:var(--sky);border-color:var(--blue)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;text-decoration:none;color:#fff}
+.badge{display:inline-block;width:38px;height:38px;border-radius:50%;overflow:hidden;background:#fff;flex:none}
+.badge img{width:100%;height:100%;object-fit:cover;transform:scale(1.5)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;min-height:82vh;padding:6vh 5vw;background:radial-gradient(circle at 75% 50%,#12306a 0,transparent 55%)}
+.hero h1{font-size:clamp(34px,5.5vw,64px);line-height:1.05;margin:0 0 18px;color:#fff;max-width:14ch}
+.hero p{max-width:52ch;color:var(--mute)}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;padding:12px 24px;margin:18px 12px 0 0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn:hover{background:#3b90f0}.btn.ghost{background:#0d2a5c;color:var(--sky)}
+.gear{display:grid;place-items:center}
+.badge.big{width:min(380px,70vw);height:min(380px,70vw);border:6px solid var(--line);box-shadow:0 0 80px #1e7be055;animation:spin 40s linear infinite}
+.badge.big img{transform:scale(1.45)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.badge.big{animation:none}}
+.sec{padding:80px 5vw;max-width:1200px;margin:auto}.sec h2{font-size:34px;margin:0 0 28px;color:#fff;border-left:5px solid var(--blue);padding-left:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--blue);padding:22px}.card h3{margin:0 0 8px;color:#fff}
+.tags span{display:inline-block;margin:8px 8px 0 0;padding:2px 10px;border:1px solid var(--blue);color:var(--sky);font-size:13px}
+.member{text-align:center;padding:18px}.member b{color:var(--sky);font-weight:500}.member h3{margin:12px 0 0;color:#fff}.member p{color:var(--mute);font-size:14px}
+.avatar{width:110px;height:110px;margin:auto;border-radius:50%;background:var(--panel);border:3px solid var(--blue);display:grid;place-items:center;font:700 40px 'Chakra Petch';overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}
+.events{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+.events li{padding:0 0 26px 24px;position:relative}.events li:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;background:var(--blue);transform:rotate(45deg)}
+.ev{display:flex;gap:24px}.events time{min-width:110px;color:var(--sky);font-family:'Chakra Petch'}.events h3{margin:0}.events p{margin:2px 0;color:var(--mute)}
+.empty{color:var(--mute)}
+input,textarea{width:100%;padding:12px;background:var(--panel);border:1px solid var(--line);color:#fff;font:inherit}
+.contact{display:grid;gap:12px;max-width:560px}
+footer{padding:30px 5vw;text-align:center;color:var(--mute);border-top:1px solid var(--line)}
+.login{max-width:360px;margin:15vh auto;display:grid;gap:12px;padding:0 20px}
+.admin{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+.admin aside{background:var(--panel);padding:20px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--line)}
+.admin aside button{background:none;border:0;color:var(--steel);text-align:left;padding:10px;cursor:pointer;font:inherit}.admin aside .on{background:var(--blue);color:#fff}
+.admin main{padding:30px;min-width:0}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:24px;align-items:center}.row .btn{margin:0}
+.list{list-style:none;padding:0}.list li{display:flex;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--line);margin-bottom:8px;background:var(--panel)}
+.list small{display:block;color:var(--mute)}.list span button{margin-left:8px;background:none;border:1px solid var(--line);color:var(--steel);padding:4px 10px;cursor:pointer}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.nav nav a{margin-left:12px}.admin{grid-template-columns:1fr}}
+
+.page{animation:pg .35s ease-out}@keyframes pg{from{opacity:0}to{opacity:1}}
+.rv{animation:rise .5s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media (prefers-reduced-motion:reduce){.rv{animation:none}.page{animation:none}}
+.sponsors{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.sponsors a{display:grid;place-items:center;height:96px;padding:14px;background:#fff;color:#0a1a3a;font:700 16px 'Chakra Petch';text-decoration:none;border-bottom:3px solid var(--blue)}
+.sponsors img{max-width:100%;max-height:100%;object-fit:contain}
+.gallery{columns:3 260px;column-gap:16px}.gallery .rv{break-inside:avoid;margin-bottom:16px}
+.shot{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--panel);cursor:zoom-in;overflow:hidden}
+.shot img{display:block;width:100%;transition:transform .4s}.shot:hover img{transform:scale(1.05)}
+.shot span{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,#060d1fe6);color:#fff;text-align:left}
+.lightbox{position:fixed;inset:0;z-index:20;background:#030812f2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;cursor:zoom-out}
+.lightbox img{max-width:94vw;max-height:80vh;object-fit:contain}
+.up{display:grid;gap:4px;place-items:center;padding:8px;border:1px dashed var(--line);cursor:pointer;min-height:56px}.up input{max-width:100%;font-size:12px}.up img{max-height:60px}.up small{color:var(--mute)}
+
+/* ---- Portal home (full-screen menu layout) ---- */
+body{background:#050a1c}.nav nav{display:flex;flex-wrap:wrap;gap:4px 0}.about{max-width:62ch}
+.portal{position:relative;min-height:100vh;overflow:hidden;display:grid;grid-template-columns:1fr minmax(380px,640px);align-items:center;gap:3vw;padding:0 5vw;
+background:radial-gradient(ellipse at 28% 50%,#14418a66,transparent 60%),radial-gradient(1px 1px at 20px 30px,#fffc,transparent),radial-gradient(1px 1px at 110px 90px,#9cf9,transparent);background-size:100% 100%,180px 140px,260px 210px}
+.portal .plogo{position:absolute;top:5vh;left:5vw}.plogo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:'Chakra Petch';line-height:1.1}
+.plogo .badge{width:52px;height:52px}.plogo b{display:block;font-size:24px;letter-spacing:.04em}.plogo i{font-size:14px;color:var(--sky);letter-spacing:.3em;text-transform:uppercase}
+.orbit{position:relative;width:min(44vw,540px);aspect-ratio:1;margin:auto;display:grid;place-items:center}
+.r{position:absolute;border-radius:50%;border:2px solid #1e7be033}
+.r1{inset:0;border-top-color:#8fd0ff;animation:spin 28s linear infinite}
+.r2{inset:9%;border-color:#1e7be0aa;border-left-color:#fff;animation:spin 20s linear infinite reverse}
+.r3{inset:19%;border:2px dashed #3b90f055;animation:spin 46s linear infinite}
+.core{width:50%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 6px #0b1a3d,0 0 110px #1e7be0aa;animation:spin 60s linear infinite}
+.core img{width:100%;height:100%;object-fit:cover;transform:scale(1.45)}
+.menu{width:100%;justify-self:end}
+.lbl{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font:500 12px 'IBM Plex Sans';letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.lbl:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}.dot{width:8px;height:8px;border-radius:50%;background:var(--sky)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center;padding:18px 18px 18px 26px;border:1px solid #234685;border-radius:14px;background:linear-gradient(100deg,#164a9e 0,#0b1a3d 22%,#050a1c 75%);color:#fff;text-decoration:none;font:700 19px 'Chakra Petch';text-transform:uppercase;transition:transform .2s,border-color .2s}
+.tile:before{content:"";position:absolute;left:-8px;top:0;bottom:0;width:22px;background:linear-gradient(#8fd0ff,#1e7be0);transform:skewX(-20deg);opacity:.6}
+.tile svg{color:var(--mute);transition:transform .2s}.tile:hover{transform:translateY(-2px);border-color:var(--sky)}.tile:hover svg{transform:translateX(4px);color:#fff}
+.tile:last-child:nth-child(odd){grid-column:1/-1}
+.portal .social{position:absolute;left:5vw;bottom:5vh}.social{display:flex;gap:24px}.social a{color:var(--mute)}.social a:hover{color:var(--sky)}
+.portal .edition{position:absolute;right:5vw;bottom:5vh}.edition{text-align:right}
+.edition small{display:flex;align-items:center;gap:14px;justify-content:flex-end;color:var(--sky);letter-spacing:.25em;text-transform:uppercase;font:500 12px 'IBM Plex Sans'}.edition small:before{content:"";width:120px;height:1px;background:var(--sky)}
+.edition h1{margin:4px 0 0;font-size:clamp(24px,3vw,40px);letter-spacing:.06em;text-transform:uppercase;color:#fff}
+@media (prefers-reduced-motion:reduce){.r,.core{animation:none}}
+@media(max-width:900px){.portal{display:flex;flex-direction:column;gap:20px;padding:110px 5vw 40px}.orbit{width:72vw}.tiles{grid-template-columns:1fr}.tile:last-child:nth-child(odd){grid-column:auto}
+.portal .social,.portal .edition{position:static}.edition{text-align:left;margin-top:10px}.edition small{justify-content:flex-start}}
+
+/* ---- Same space style on every inner page ---- */
+body{background:radial-gradient(ellipse at 20% 0,#14418a55,transparent 55%),radial-gradient(1px 1px at 20px 30px,#fffc,transparent),radial-gradient(1px 1px at 110px 90px,#9cf9,transparent),#050a1c;background-size:100% 100%,180px 140px,260px 210px,auto}
+.nav{background:transparent;border:0;backdrop-filter:none;padding:22px 5vw;flex-wrap:wrap;gap:14px}
+.nav nav a{margin:0 0 0 8px;padding:8px 16px;border:1px solid #234685;border-radius:999px;background:#0b1a3d88;font:700 14px 'Chakra Petch';letter-spacing:.06em;text-transform:uppercase}
+.nav nav a:hover{border-color:var(--sky);color:#fff}.nav nav a.active{background:var(--blue);border-color:var(--sky);color:#fff}
+.sec h2{display:flex;align-items:center;gap:18px;border:0;padding:0;font-size:clamp(30px,4vw,48px);text-transform:uppercase;letter-spacing:.03em}
+.sec h2:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.card,.member{position:relative;overflow:hidden;border:1px solid #234685;border-radius:14px;padding:22px 22px 22px 34px;background:linear-gradient(100deg,#164a9e 0,#0b1a3d 14%,#050a1c 70%);transition:transform .2s,border-color .2s}
+.card:before,.member:before{content:"";position:absolute;left:-8px;top:0;bottom:0;width:20px;background:linear-gradient(#8fd0ff,#1e7be0);transform:skewX(-20deg);opacity:.6}
+.card:hover,.member:hover{transform:translateY(-2px);border-color:var(--sky)}.card h3,.member h3{text-transform:uppercase;font-size:20px}
+.btn{clip-path:none;border-radius:12px;border:1px solid var(--sky);background:linear-gradient(100deg,#1e7be0,#164a9e)}.btn.ghost{background:#0b1a3d}
+input,textarea{border-radius:12px;border-color:#234685;background:#0b1a3daa}
+.shot,.sponsors a{border-radius:14px}.shot{border-color:#234685}.events{border-color:#234685}
+footer.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:50px 5vw 40px;border:0;color:inherit}
+.edition b{display:block;font:700 clamp(18px,2.2vw,28px) 'Chakra Petch';letter-spacing:.06em;text-transform:uppercase;color:#fff}
